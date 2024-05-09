@@ -1,0 +1,17 @@
+<form (ngSubmit)="editar( formulario )" #formulario = "ngForm">
+    <label for="">Ingresar ID</label>
+    <input type="text" name="id" [(ngModel)]="id" class="form-control">
+
+    <label for="">Ingresar Nombre del juego</label>
+    <input type="text" name="nombre"  [(ngModel)]="personal.nombre" class="form-control">
+
+    <label for="">Ingresar el precio del juego</label>
+    <input type="text" name="precio"  [(ngModel)]="personal.precio" class="form-control">
+
+    <label for="">Ingresar el url de la nueva imagen</label>
+    <input type="text" name="url"  [(ngModel)]="personal.url" class="form-control">
+    <br>
+    
+    <button type="submit" >Guardar</button>
+</form>
+
