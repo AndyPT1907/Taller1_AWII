@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ArticuloService } from '../../services/articulo.service';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-tabla',
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TablaComponent {
   servicio = inject(ArticuloService)
+  carrito = inject(CarritoService)
 
   articulos : any;
 
@@ -34,6 +36,10 @@ export class TablaComponent {
     this.visualizar = id
   }
   Preciomin = 0
+  
   Preciomax = 500
+  addToCart(articulos: any): void {
+    this.carrito.addToCart(articulos).subscribe();
+  }
 
 }

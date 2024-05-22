@@ -40,7 +40,8 @@
                     <button class="btn btn-danger" (click)="eliminar(juego.id)">Eliminar</button>
                     
                     <button class="btn btn-success" [routerLink]="['/editar-detalles',juego.id]">editar</button>
-                  </td>
+                    <button (click)="addToCart(juego)">Add to Cart</button>
+                </td>
                 }
         </tr>
         }

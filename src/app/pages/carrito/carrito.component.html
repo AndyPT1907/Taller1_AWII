@@ -1,0 +1,13 @@
+@for (cart of articulos; track cart) {
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="{{cart.url}}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{cart.nombre}}</h4>
+          <p class="card-title">Precio: ${{cart.precio}}</p>
+          <button (click)="eliminar(cart.id)">eliminar</button>
+        </div>
+      </div>
+
+    
+}
+<h3>Total: {{ total | currency }}</h3>  

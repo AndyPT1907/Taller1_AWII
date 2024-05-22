@@ -1,0 +1,14 @@
+<form (ngSubmit)="editar( formulario )" #formulario = "ngForm">
+    <label for="">Ingresar ID</label>
+    <input type="text" name="id" [(ngModel)]="id" class="form-control">
+
+    <label for="">Ingresar nuevo correo</label>
+    <input type="text" name="email"  [(ngModel)]="users.email" class="form-control">
+
+    <label for="">Ingresar nueva Contraseña</label>
+    <input type="text" name="password"  [(ngModel)]="users.password" >
+    <label for="">Ingresar nuevo Rol</label>
+    <input type="text" name="role"  [(ngModel)]="users.role" class="form-control">
+    
+    <button type="submit" >Guardar</button>
+</form>
