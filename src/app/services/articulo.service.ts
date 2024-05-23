@@ -9,7 +9,8 @@ export class ArticuloService {
 
   constructor(private http: HttpClient) { }
 
-  private API_PERSONAL = "http://localhost:3000/articulos";
+  private API_PERSONAL = "http://localhost:9090/articulos";
+  //private API_PERSONAL = "http://localhost:3000/articulos";
 
   getPersonal(): Observable <any>{
     return this.http.get( this.API_PERSONAL)

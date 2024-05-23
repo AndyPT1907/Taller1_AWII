@@ -1,0 +1,51 @@
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-link {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #ddd;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.btn {
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+}

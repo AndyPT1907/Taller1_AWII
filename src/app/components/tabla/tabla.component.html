@@ -1,56 +1,49 @@
-<div>
+<div class="container">
     <h2 class="colorh2">Buscar por precio</h2>
-    <form>
+    <form class="price-form">
         <label for="minPrice" class="colorh2">Precio mínimo:</label>
-        <input type="number" name="minPrice" [(ngModel)]="Preciomin" [ngModelOptions]="{standalone: true}">
+        <input type="number" name="minPrice" [(ngModel)]="Preciomin" [ngModelOptions]="{standalone: true}" class="form-control">
         <label for="maxPrice" class="colorh2">Precio máximo:</label>
-        <input type="number" name="maxPrice" [(ngModel)]="Preciomax" [ngModelOptions]="{standalone: true}">
+        <input type="number" name="maxPrice" [(ngModel)]="Preciomax" [ngModelOptions]="{standalone: true}" class="form-control">
     </form>
     <br>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Detalles</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (juego of articulos; track juego) {
-        <tr>
-            @if( juego.precio>Preciomin && juego.precio < Preciomax ) {
-                     <th scope="row">{{juego.id}}</th>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (juego of articulos; track juego) {
+            <tr>
+                @if( juego.precio > Preciomin && juego.precio < Preciomax ) {
+                <td>{{juego.id}}</td>
                 <td>{{juego.nombre}}</td>
-                <td>{{juego.precio}}</td>
+                <td>{{juego.precio | currency}}</td>
                 <td>
-                    <!--///////////////////////////////-->
                     @if( visualizar == juego.id ){
-                    <button (click)="ver(juego.id)">Imagen del juego</button>
-                    <img src="{{juego.url}}" alt="" height="200">
+                    <button class="btn btn-link" (click)="ver(juego.id)">Imagen del juego</button>
+                    <img src="{{juego.url}}" alt="" class="img-thumbnail">
                     } @else {
-                    <button class="btn btn-primary" (click)="ver( juego.id )">Imagen del juego</button>
+                    <button class="btn btn-primary" (click)="ver(juego.id)">Imagen del juego</button>
                     }
-                    <!--//////////////////////////////////-->
                 </td>
-
-                
                 <td>
                     <button class="btn btn-danger" (click)="eliminar(juego.id)">Eliminar</button>
-                    
-                    <button class="btn btn-success" [routerLink]="['/editar-detalles',juego.id]">editar</button>
-                    <button (click)="addToCart(juego)">Add to Cart</button>
+                    <button class="btn btn-success" [routerLink]="['/editar-detalles', juego.id]">Editar</button>
+                    <div class="input-group">
+                        <input #quantityInput type="number" min="1" [value]="1" class="form-control">
+                        <button class="btn btn-info" (click)="addToCart(juego, quantityInput.valueAsNumber)">Añadir al carrito</button>
+                    </div>
                 </td>
                 }
-        </tr>
-        }
-    </tbody>
-</table>
-
-    <button [routerLink]="['/juegos-detalles']">Agregar nuevo juego</button>
-
- 
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <button class="btn btn-primary" [routerLink]="['/juegos-detalles']">Agregar nuevo juego</button>
 </div>

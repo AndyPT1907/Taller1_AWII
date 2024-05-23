@@ -18,7 +18,7 @@ export class EditarComponent {
   url:any
   
 
-personal:any
+articulos:any
 
 servicio = inject(ArticuloService)
 route = inject(Router)
@@ -33,7 +33,7 @@ ruta = inject(ActivatedRoute)
      this.id= p['idJuegos']
  
      this.servicio.getPersonalUnico(this.id).subscribe( e =>{
-       this.personal= e
+       this.articulos= e
      })
  
  

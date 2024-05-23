@@ -32,10 +32,18 @@
   ],
   "carrito": [
     {
-      "id": "vd4",
+      "id": 1,
       "nombre": "Call of Duty",
-      "precio": 80,
-      "url": "https://w7.pngwing.com/pngs/184/635/png-transparent-call-of-duty-advanced-warfare-call-of-duty-modern-warfare-3-playstation-4-playstation-3-call-of-duty-video-game-playstation-4-call-of-duty.png"
+      "precio": "80",
+      "url": "https://w7.pngwing.com/pngs/184/635/png-transparent-call-of-duty-advanced-warfare-call-of-duty-modern-warfare-3-playstation-4-playstation-3-call-of-duty-video-game-playstation-4-call-of-duty.png",
+      "quantity": 2
+    },
+    {
+      "id": 2,
+      "nombre": "Andy",
+      "precio": "25",
+      "url": "https://img.redbull.com/images/c_fill,w_1200,h_600,g_auto,f_auto,q_auto/redbullcom/2022/8/1/ksfga6rlx2ugfhjd9vnk/league-of-legends",
+      "quantity": 1
     }
   ]
 }

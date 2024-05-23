@@ -21,5 +21,8 @@ export class CarritoService {
   removeFromCart(id: number): Observable<any> {
     return this.http.delete(`${this.apiCarrito}/carrito/${id}`);
   }
+  updateCartItem(articulo: any): Observable<any> {
+    return this.http.put<any>(`${this.apiCarrito}/carrito/${articulo.id}`, articulo);
+  }
   
 }

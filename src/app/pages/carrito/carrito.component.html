@@ -1,13 +1,40 @@
-@for (cart of articulos; track cart) {
-    <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{cart.url}}" alt="Card image">
-        <div class="card-body">
+<div class="container">
+  @for (cart of articulos; track cart) {
+  <div class="card custom-card">
+      <img class="card-img-top" src="{{cart.url}}" alt="Card image">
+      <div class="card-body">
           <h4 class="card-title">{{cart.nombre}}</h4>
-          <p class="card-title">Precio: ${{cart.precio}}</p>
-          <button (click)="eliminar(cart.id)">eliminar</button>
-        </div>
+          <p class="card-price">Precio: {{cart.precio | currency }} x {{ cart.quantity }}</p>
+          <div class="button-group">
+              <button class="btn btn-secondary" (click)="updateQuantity(cart, -1)">-</button>
+              <button class="btn btn-secondary" (click)="updateQuantity(cart, 1)">+</button>
+              <button class="btn btn-danger" (click)="removeFromCart(cart.id)">Remove</button>
+          </div>
       </div>
-
-    
-}
-<h3>Total: {{ total | currency }}</h3>  
+  </div>
+  }
+  <div class="totals">
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Cantidad</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>SubTotal</td>
+                  <td>{{ subtotal | currency }}</td>
+              </tr>
+              <tr>
+                  <td>IVA 12%</td>
+                  <td>{{ iva | currency }}</td>
+              </tr>
+              <tr>
+                  <td>Total</td>
+                  <td>{{ total | currency }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
