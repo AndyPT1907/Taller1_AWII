@@ -10,18 +10,18 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Imagen</th>
-                <th>Detalles</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             @for (juego of articulos; track juego) {
             <tr>
                 @if( juego.precio > Preciomin && juego.precio < Preciomax ) {
-                <td>{{juego.id}}</td>
+               
                 <td>{{juego.nombre}}</td>
                 <td>{{juego.precio | currency}}</td>
                 <td>
